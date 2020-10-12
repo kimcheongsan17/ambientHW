@@ -15,7 +15,7 @@ def input_size(interpreter):
 def input_tensor(interpreter):
   """Returns input tensor view as numpy array of shape (height, width, 3)."""
   tensor_index = interpreter.get_input_details()[0]['index']
-  return interpreter.tensor(tensor_index)()[0]
+  return interpreter.tensor(tensor_index)()[0]/255.
 
 
 def output_tensor(interpreter):
