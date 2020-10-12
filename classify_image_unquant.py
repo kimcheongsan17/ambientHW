@@ -100,7 +100,6 @@ def main():
 
     size = classify.input_size(interpreter)
     image = Image.open(args.input).convert('RGB').resize(size, Image.ANTIALIAS)
-    print(image)
     classify.set_input(interpreter, image)
 
     print('----INFERENCE TIME----')
