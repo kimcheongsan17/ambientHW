@@ -23,7 +23,6 @@ def output_tensor(interpreter):
   output_details = interpreter.get_output_details()[0]
   output_data = np.squeeze(interpreter.tensor(output_details['index'])())
   output_data = np.float32(output_data)
-  print(output_data)
   return output_data
 
 
