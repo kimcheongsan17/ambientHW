@@ -13,7 +13,6 @@ def input_size(interpreter):
 
 
 def input_tensor(interpreter):
-  print(interpreter[:, :],"Dsds")
   """Returns input tensor view as numpy array of shape (height, width, 3)."""
   tensor_index = interpreter.get_input_details()[0]['index']
   return interpreter.tensor(tensor_index)()[0]
@@ -29,7 +28,6 @@ def output_tensor(interpreter):
 def set_input(interpreter, data):
   """Copies data to input tensor."""
   input_tensor(interpreter)[:, :] = data
-  print(input_tensor(interpreter)[:, :])
 
 
 def get_output(interpreter, top_k=1, score_threshold=0.0):
